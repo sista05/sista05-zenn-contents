@@ -2,7 +2,7 @@
 title: "Fivetranのdbt transformationsを徹底検証"
 emoji: "🔀"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["Fivetran", "dbt", "tech"]
+topics: ["Fivetran", "dbt"]
 published: true
 ---
 
