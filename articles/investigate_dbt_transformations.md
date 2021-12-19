@@ -126,7 +126,7 @@ Fivetranのデータ取得をトリガーにJobをキックする使い方は普
 {%- if target.name == "dev" -%} POC
 {%- elif target.name == "qa" -%} QA
 # For testing in Fivetran reverting to POC
-{%- elif target.name == "prd" -%} PRD
+{%- elif target.name == "prod" -%} PRD
 {%- else -%} invalid_database
 {%- endif -%}
 ```
