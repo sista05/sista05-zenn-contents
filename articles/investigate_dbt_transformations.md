@@ -18,7 +18,7 @@ https://qiita.com/sista05/items/cbacfefaa667eb3fe509
 dbtのユースケースを伺ってみると、そこまでエンジニア寄りで無い方も使うといったお話も多いようです。dbt Cloudを使えばIDEや実行環境、CIまで提供していて便利なのですがプラン料金がかかります。また、データパイプライン構築済みの環境ではdbt Cloudの導入メリットもそこまで高くなく、ユースケースで使い分けるものと感じました。そこで、Fivetranのdbt transformationsはどのような使用感になるのか検証してみました。
 
 :::message alert
-**現在dbt transformationsはβ版であり、この記事は 今後の機能拡張と不足を補う手段について考察したものになります**
+**現在dbt transformationsはβ版であり、この記事は 主機能の他に今後の機能拡張と不足を補う手段について考察したものになります**
 :::
 
 # ⚙️dbt transformationsの設定
@@ -59,7 +59,6 @@ dbtを使用する際にはprofile.ymlというファイルが必要になりま
 
 # 🧐dbt transformationsの使用感
 
-## UIイメージ
 上記でも触れましたが、dbt transformationsではdbt Cloudのように任意のdbtコマンドの発行はできず、deployment.ymlに記載したジョブだけが登録される形になります。つまりジョブスケジューラ機能を提供していると考えていいと思います。
 
 ![](/images/job-1.png)
