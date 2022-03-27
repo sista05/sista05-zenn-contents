@@ -30,18 +30,18 @@ dbtのユースケースを伺ってみると、そこまでエンジニア寄�
 
 git連携とデフォルトスキーマ項目。デフォルトスキーマは一度設定すると変えられない。
 
-![](/images/setting-1.png =500x)
+![](/images/investigate_dbt_transformations/setting-1.png =500x)
 
-![](/images/warning-1.png)
+![](/images/investigate_dbt_transformations/warning-1.png)
 
 クレデンシャル設定。接続DBにより項目内容がまちまちになる。
 
-![](/images/setting-2.png)
+![](/images/investigate_dbt_transformations/setting-2.png)
 
 アドバンスドオプション。
 取得先のブランチ名とリポジトリのトップにdbtプロジェクトが無い場合の設定など。
 
-![](/images/setting-3.png)
+![](/images/investigate_dbt_transformations/setting-3.png)
 :::
 
 ### dbt ・ dbt Cloudとの違い
@@ -61,17 +61,17 @@ dbtを使用する際にはprofile.ymlというファイルが必要になりま
 
 上記でも触れましたが、dbt transformationsではdbt Cloudのように任意のdbtコマンドの発行はできず、deployment.ymlに記載したジョブだけが登録される形になります。つまりジョブスケジューラ機能を提供していると考えていいと思います。
 
-![](/images/job-1.png)
+![](/images/investigate_dbt_transformations/job-1.png)
 *登録されたJobとその実行結果はUIで確認できる*
 
 :::details 登録されたジョブの実行結果例
 実行結果例
 
-![](/images/job-2.png)
+![](/images/investigate_dbt_transformations/job-2.png)
 
 ジョブが失敗した様子
 
-![](/images/version_error.png)
+![](/images/investigate_dbt_transformations/version_error.png)
 
 :::
 
@@ -147,7 +147,7 @@ models:
 
 dbtでは`dbt docs generate`コマンドでDBデータが詰まった静的Webページを生成できます。DBテーブルやカラムの説明、また データの容量やどのテーブルと依存関係があるかのDAG図なども生成されるので、dbt transformationsから閲覧したい要望は自然でしょう。
 
-![日本語](/images/japanese-docs.png =500x)
+![日本語](/images/investigate_dbt_transformations/japanese-docs.png =500x)
 *salesforce_source packageの日本語版を作成中*
 
 代替案として、PRがMergeされたらGithub ActionsなどのCIでドキュメントを生成するようにして、それをそのままバケットにpushしてしまうような仕組みを作るのはそこまで難しくないと感じました。社内の人だけ閲覧できるようにするならバケットにIP制限をかけたり、よりセキュリティを強くするなら例えばCognito認証をかけたりしてもいいと思います。
@@ -156,7 +156,7 @@ dbtでは`dbt docs generate`コマンドでDBデータが詰まった静的Web�
 
 # 📑調査まとめ
 
-![](/images/matome.jpg)
+![](/images/investigate_dbt_transformations/matome.jpg)
 *板書は頭を下げ倒してお願いしました*
 
 考えてみると、dbt Cloudがそれ自体でdbtの機能を包括しているということは、裏を返せばdbt機能をUI上で実現させるとそれだけで一つのサービスとして成立してしまう。ということでもあるので、dbt Cloudと同じような機能をdbt transformationsにも実装して欲しいという要望は要求過多にも感じますし、Fivetranの主機能を措いてdbt機能を充実させるには単純に開発リソースも足りなさそうです。
